@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EllMovieVerse - Movie Search App</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav">
+
+            <a href="#" class="logo">
+                <span>🎬</span>
+                EllMovieVerse
+            </a>
+
+            <nav class="nav-menu">
+                <button class="nav-btn active" data-section="discover">
+                    Discover
+                </button>
+
+                <button class="nav-btn" data-section="favorites">
+                    ❤️ Favorites
+                </button>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- Hero -->
+    <main>
+
+        <section class="hero">
+            <div class="container hero-content">
+
+                <span class="hero-badge">
+                    🎥 Movie Discovery
+                </span>
+
+                <h1>
+                    Find your next
+                    <span>favorite movie.</span>
+                </h1>
+
+                <p>
+                    Search thousands of movies and discover something
+                    worth watching tonight.
+                </p>
+
+                <!-- Search -->
+                <form class="search-box" id="searchForm">
+
+                    <span class="search-icon">🔍</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search movies..."
+                        autocomplete="off"
+                    >
+
+                    <button type="submit">
+                        Search
+                    </button>
+
+                </form>
+
+            </div>
+        </section>
+
+
+        <!-- Content -->
+        <section class="content-section">
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+                        <span class="section-label" id="sectionLabel">
+                            DISCOVER
+                        </span>
+
+                        <h2 id="sectionTitle">
+                            Popular Movies
+                        </h2>
+                    </div>
+
+                    <button class="clear-search hidden" id="clearSearch">
+                        Clear search
+                    </button>
+
+                </div>
+
+
+                <!-- Loading -->
+                <div class="loading hidden" id="loading">
+                    <div class="spinner"></div>
+                    <p>Finding movies...</p>
+                </div>
+
+
+                <!-- Error -->
+                <div class="message hidden" id="errorMessage">
+                    <div class="message-icon">😕</div>
+
+                    <h3>Something went wrong</h3>
+
+                    <p id="errorText">
+                        We couldn't load the movies.
+                    </p>
+                </div>
+
+
+                <!-- Empty -->
+                <div class="message hidden" id="emptyMessage">
+                    <div class="message-icon">🎬</div>
+
+                    <h3>No movies found</h3>
+
+                    <p>
+                        Try searching with another movie title.
+                    </p>
+                </div>
+
+
+                <!-- Movie Grid -->
+                <div class="movie-grid" id="movieGrid"></div>
+
+
+                <!-- Load More -->
+                <div class="load-more-wrapper hidden" id="loadMoreWrapper">
+                    <button class="load-more" id="loadMore">
+                        Load More
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Movie Detail Modal -->
+    <div class="modal hidden" id="movieModal">
+
+        <div class="modal-overlay" id="modalOverlay"></div>
+
+        <div class="modal-content">
+
+            <button class="modal-close" id="modalClose">
+                ×
+            </button>
+
+            <div id="modalBody"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <p>
+                MovieVerse © 2026 · Powered by TMDB
+            </p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
